@@ -9,4 +9,4 @@
 
 * ./qdel questname
 
-[![](https://media.giphy.com/media/LMWGIZyIYiyZ6VxHO7/giphy.gif)
+[![](http://img.youtube.com/vi/z2OaVOJHXd4/maxresdefault.jpg)](http://www.youtube.com/watch?v=z2OaVOJHXd4)
