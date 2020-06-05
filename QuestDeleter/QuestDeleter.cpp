@@ -20,8 +20,8 @@ static std::uint16_t U_DEL_COUNT;
 namespace QuestDeleter
 {
 	/*Operation*/
-	void Process(const std::string& _DelString)
-	{		
+	void Process(const char* QuestName)
+	{			
 		static auto SDelPath = GetPath();
 		if (SDelPath.empty())
 			return;
@@ -29,11 +29,13 @@ namespace QuestDeleter
 		static std::uint16_t stage = 1;
 		printf("\n*******Stage %hu Started*******\n\n", stage);
 
+		const auto _DelString(Slash + std::string(QuestName));
+
 		for (const auto& FileIter : fs::recursive_directory_iterator(SDelPath)) {
 			const auto& PathString = FileIter.path().u8string();
 
-			if (PathString.find(Slash + _DelString + ".") == std::string::npos &&
-				_DelString.compare(std::string_view(PathString).substr(PathString.length() - _DelString.length(), PathString.length())))
+			if (PathString.find(_DelString + ".") == std::string::npos &&
+				_DelString.compare(std::string_view(PathString).substr(PathString.length() - _DelString.length())))
 				continue;
 
 			if (!fs::is_directory(PathString) && fs::remove(PathString)) {

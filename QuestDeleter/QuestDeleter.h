@@ -5,7 +5,7 @@
 namespace QuestDeleter
 {
 	std::string GetPath();
-	void Process(const std::string& _DelString);
+	void Process(const char* QuestName);
 	void WriteVersion();
 	void PrintDeletedCount();
 }
