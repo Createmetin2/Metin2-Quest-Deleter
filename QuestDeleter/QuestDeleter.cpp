@@ -1,6 +1,4 @@
 #include "QuestDeleter.h"
-#include <iostream>
-#include <fstream>
 
 #if defined(__FreeBSD__)
 #include <experimental/filesystem>
